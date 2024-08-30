@@ -50,7 +50,7 @@ dependencies {
 	compileOnly('org.projectlombok:lombok')
 
 	runtimeOnly('org.postgresql:postgresql')
-//	implementation('org.flywaydb:flyway-core')
+	implementation('org.flywaydb:flyway-core')
 
 	implementation("org.mapstruct:mapstruct:${mapstructVersion}")
 	annotationProcessor("org.mapstruct:mapstruct-processor:${mapstructVersion}")
@@ -69,6 +69,9 @@ dependencies {
 	implementation('io.confluent:kafka-avro-serializer:7.6.0')
 //	implementation('org.apache.kafka:kafka-clients:3.7.0')
 	implementation('com.huyle:lib-domain-driven:1.0.0-SNAPSHOT')
+	implementation('io.jsonwebtoken:jjwt-api:0.11.5')
+	implementation('io.jsonwebtoken:jjwt-impl:0.11.5')
+	implementation('io.jsonwebtoken:jjwt-jackson:0.11.5')
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 	// testImplementation('org.springframework.kafka:spring-kafka-test')

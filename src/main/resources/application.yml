@@ -1,14 +1,15 @@
 
 server:
-  port: 8080
+  port: 8089
   servlet:
-    context-path: /order-service
+    context-path: /auth-service
 
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/ecomerce?reWriteBatchedInserts=true
     username: postgres
     password: postgres
+    schema: auth_service
 
   jpa:
     open-in-view: false
@@ -17,7 +18,7 @@ spring:
       dialect: org.hibernate.dialect.PostgreSQLDialect
     properties:
       hibernate:
-        default_schema: order_service
+        default_schema: auth_service
         format_sql: true
         jdbc:
           batch_size: 30
@@ -27,7 +28,7 @@ spring:
   flyway:
     enabled: true
     baseline-on-migrate: true
-    schemas: order_service
+    schemas: auth_service
 
   kafka:
     bootstrap-servers: localhost:9092
