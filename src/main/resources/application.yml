@@ -6,10 +6,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/ecomerce?reWriteBatchedInserts=true
+    url: jdbc:postgresql://localhost:5432/ecomerce?reWriteBatchedInserts=true&currentSchema=auth_service
     username: postgres
     password: postgres
-    schema: auth_service
 
   jpa:
     open-in-view: false

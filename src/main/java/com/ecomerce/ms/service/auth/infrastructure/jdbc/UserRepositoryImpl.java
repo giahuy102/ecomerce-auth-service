@@ -19,10 +19,11 @@ public class UserRepositoryImpl implements UserRepository {
     public Optional<User> findByUsername(String username) {
         try {
             User userFound = jdbcTemplate.queryForObject(
-                    "SELECT username FROM users WHERE username = ?",
+                    "SELECT username, password FROM users WHERE username = ?",
                     (rs, rowNum) -> {
                         User user = new User();
                         user.setUsername(rs.getString("username"));
+                        user.setPassword(rs.getString("password"));
                         return user;
                     },
                     username
